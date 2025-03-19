@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航样式 */
+.main-nav {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+}
+
+.main-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color var(--transition-speed);
+}
+
+.main-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* 头部英雄区域 */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #63b8ff 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 个人简介卡片 */
+.section {
+    padding: 4rem 0;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.bio-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 时间轴样式 */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    width: 45%;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 55%;
+}
+
+.timeline-item:nth-child(even) {
+    margin-right: 55%;
+}
+
+.timeline-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.course-list li {
+    padding: 0.5rem 0;
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+/* 联系卡片 */
+.contact-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.contact-info li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* 页脚 */
+.footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: auto;
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
